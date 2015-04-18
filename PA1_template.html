@@ -69,8 +69,9 @@ img {
 <hr />
 <div id="load-the-data-i.e.read.csv" class="section level3">
 <h3>1. Load the data (i.e. read.csv())</h3>
-<pre class="r"><code>if(!file.exists(&quot;./data&quot;)){dir.create(&quot;./data&quot;)}
-if(file.exists(&quot;./data/activity.zip&quot;)){unzip(&quot;./data/activity.zip&quot;, exdir = &quot;./data&quot;)}
+<pre class="r"><code>if(!file.exists(&quot;../data&quot;)){dir.create(&quot;../data&quot;)}
+if(!file.exists(&quot;../data/activity.zip&quot;)){download.file(&quot;http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;, destfile = &quot;../data/activity.zip&quot;)}
+unzip(&quot;../data/activity.zip&quot;, exdir = &quot;../data&quot;)
 data = read.csv(&quot;../data/activity.csv&quot;)</code></pre>
 </div>
 <div id="processtransform-the-data-if-necessary-into-a-format-suitable-for-your-analysis" class="section level3">
