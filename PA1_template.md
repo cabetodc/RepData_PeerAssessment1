@@ -45,7 +45,9 @@ tns = aggregate(steps ~ date, data, FUN = sum, na.rm = TRUE)
 
 ```r
 library(ggplot2)
-qplot(steps, data = tns, binwidth = 1000, xlab = "total number of steps taken each day")
+ggplot(data = tns, aes(x = steps)) +
+        geom_bar(binwidth = 1000, fill = "firebrick4", color = "blue") +
+        labs(x = "total number of steps taken each day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
@@ -139,7 +141,9 @@ filling <- filling[n]
 
 ```r
 tnsfill <- aggregate(steps ~ date, filling, sum, na.rm = TRUE)
-qplot(steps, data = tnsfill, binwidth = 1400, xlab = "total number of steps taken each day")
+ggplot(data = tnsfill, aes(x = steps)) +
+        geom_bar(binwidth = 1000, fill = "firebrick4", color = "blue") +
+        labs(x = "total number of steps taken each day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
